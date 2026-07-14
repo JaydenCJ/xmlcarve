@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Example feed</title>
+  <updated>2026-06-01T00:00:00Z</updated>
+  <entry>
+    <id>urn:example:1</id>
+    <title>First post</title>
+    <link href="https://example.test/1" rel="alternate"/>
+    <category term="intro"/>
+    <category term="meta"/>
+    <summary>Hello, world.</summary>
+  </entry>
+  <entry>
+    <id>urn:example:2</id>
+    <title>Numbers &amp; types</title>
+    <link href="https://example.test/2" rel="alternate"/>
+    <category term="data"/>
+    <summary>2.5 stars, 42 comments, featured=true.</summary>
+  </entry>
+</feed>

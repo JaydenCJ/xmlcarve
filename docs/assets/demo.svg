@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="520" viewBox="0 0 1060 520" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+  <!-- Terminal rendering of a real xmlcarve session (output copied verbatim
+       from a local run on 2026-07-13 against examples/wiki.xml). -->
+  <rect width="1060" height="520" rx="10" fill="#1c2128"/>
+  <rect width="1060" height="34" rx="10" fill="#2d333b"/>
+  <rect y="24" width="1060" height="10" fill="#2d333b"/>
+  <circle cx="20" cy="17" r="6" fill="#f47067"/>
+  <circle cx="40" cy="17" r="6" fill="#e0b543"/>
+  <circle cx="60" cy="17" r="6" fill="#57ab5a"/>
+  <text x="530" y="22" text-anchor="middle" fill="#909dab">xmlcarve — giant XML in, JSONL out, constant memory</text>
+
+  <g fill="#adbac7">
+    <text x="24" y="66"><tspan fill="#6cb6ff">$</tspan> xmlcarve inspect wiki.xml   <tspan fill="#768390"># what is the record element?</tspan></text>
+    <text x="24" y="92" fill="#909dab">     count     w/attrs  path</text>
+    <text x="24" y="114" fill="#909dab">         1           0  mediawiki</text>
+    <text x="24" y="136" fill="#909dab">         3           0  mediawiki/page</text>
+    <text x="24" y="158" fill="#909dab">         3           3  mediawiki/page/revision/text</text>
+    <text x="24" y="184"><tspan fill="#57ab5a">suggested --record: mediawiki/page</tspan></text>
+
+    <text x="24" y="236"><tspan fill="#6cb6ff">$</tspan> xmlcarve carve -r page --stats wiki.xml   <tspan fill="#768390"># one JSON line per &lt;page&gt;</tspan></text>
+    <text x="24" y="262" fill="#909dab">{"title":"Streaming parser","ns":"0","id":"1","revision":{"id":"101",…}}</text>
+    <text x="24" y="284" fill="#909dab">{"title":"Pull &amp; push APIs","ns":"0","id":"2","revision":{"id":"102",…}}</text>
+    <text x="24" y="306" fill="#909dab">{"title":"Constant memory","ns":"0","id":"3","revision":{"id":"103",…}}</text>
+    <text x="24" y="332" fill="#768390">xmlcarve: wrote 3 record(s) (3 matched, 0 skipped), 1200 bytes read</text>
+
+    <text x="24" y="384"><tspan fill="#6cb6ff">$</tspan> bzcat dump.xml.bz2 | xmlcarve carve -r page - &gt; pages.jsonl</text>
+    <text x="24" y="410" fill="#768390"># 40 GB dump, a few hundred KB resident — only the current record is in memory</text>
+
+    <text x="24" y="462"><tspan fill="#6cb6ff">$</tspan> xmlcarve carve -r page --skip 1 --limit 1 --infer-types wiki.xml</text>
+    <text x="24" y="488" fill="#909dab">{"title":"Pull &amp; push APIs","ns":0,"id":2,"revision":{"id":102,…}}</text>
+  </g>
+</svg>

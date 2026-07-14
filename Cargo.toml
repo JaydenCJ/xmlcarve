@@ -1,0 +1,19 @@
+[package]
+name = "xmlcarve"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+authors = ["JaydenCJ <aisingioro.kiyon@gmail.com>"]
+description = "Stream giant XML files into JSONL by record element with constant memory — generic selector rules, not one product's export format."
+license = "MIT"
+repository = "https://github.com/JaydenCJ/xmlcarve"
+keywords = ["xml", "jsonl", "streaming", "etl", "cli"]
+categories = ["command-line-utilities", "parsing"]
+
+[dependencies]
+# None. The pull parser, the entity decoder, the JSON writer and the
+# selector engine are all implemented on the Rust standard library.
+
+[profile.release]
+strip = true
+lto = true

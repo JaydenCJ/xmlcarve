@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+  <siteinfo>
+    <sitename>Testwiki</sitename>
+    <dbname>testwiki</dbname>
+  </siteinfo>
+  <page>
+    <title>Streaming parser</title>
+    <ns>0</ns>
+    <id>1</id>
+    <revision>
+      <id>101</id>
+      <timestamp>2026-05-01T09:00:00Z</timestamp>
+      <contributor><username>Ada</username><id>7</id></contributor>
+      <text bytes="53" xml:space="preserve">A streaming parser reads input as it arrives.</text>
+    </revision>
+  </page>
+  <page>
+    <title>Pull &amp; push APIs</title>
+    <ns>0</ns>
+    <id>2</id>
+    <revision>
+      <id>102</id>
+      <timestamp>2026-05-02T10:30:00Z</timestamp>
+      <contributor><username>Brahim</username><id>9</id></contributor>
+      <text bytes="41" xml:space="preserve">Pull APIs hand out events on demand.</text>
+    </revision>
+  </page>
+  <page>
+    <title>Constant memory</title>
+    <ns>0</ns>
+    <id>3</id>
+    <revision>
+      <id>103</id>
+      <timestamp>2026-05-03T14:45:00Z</timestamp>
+      <contributor><username>Ada</username><id>7</id></contributor>
+      <text bytes="47" xml:space="preserve">Memory use should not grow with input size.</text>
+    </revision>
+  </page>
+</mediawiki>
